@@ -1,2 +1,2 @@
-# Super easy guide to connect to the ARC (Advanced Research Computing) cluster
-Here we will go over the main points to connect to ARC, if you want further information you can visit: https://rcs.ucalgary.ca/ARC_Cluster_Guide
+# Super easy guide to connect to the ARC cluster
+ARC stands for Advanced Research Computing. Here we will cover how to log in and run jobs. If you want further information you can visit: https://rcs.ucalgary.ca/ARC_Cluster_Guide
