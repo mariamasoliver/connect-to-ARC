@@ -4,8 +4,8 @@
 #SBATCH --nodes=1 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=12:00:00
-#SBATCH --mem=20G
+#SBATCH --time=1:00:00
+#SBATCH --mem=2G
 #SBATCH --partition=cpu2019
 
 # Email settings 
@@ -17,10 +17,10 @@
 #SBATCH --error=./Report/M-%x.%j.err
 
 # Name of the matlab function to be called
-MAIN="RNN_two_sup_chimera_lorenz"
+MAIN="lorenz_using_script"
 
 # Define key parameters for the example calculation.
-# $SLURM_ARRAY_TASK_ID is the variable containing the value passed in by sbatch --array=
+# $SLURM_ARRAY_TASK_ID is the variable containing the value or values passed in by sbatch --array=
 
 S0=$SLURM_ARRAY_TASK_ID
 # Name of results file or directory
