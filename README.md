@@ -51,24 +51,26 @@ There are two main directories
   ```
 
 ## How to run a job
-
-1. Directly from the Home directory 
+### Directly from the Home directory 
 
 Use it for programm testing
 
   **Important considerations**
-  - There is no memory allocation
-  - There is no time specification
-  - It is meant for short sessions (no longer than 15 min) requiring few memory 
- 
 
-```
-ssh username@arc.ucalgary.ca
-[username@arc ~]$ cd data
-[username@arc data]$ cd test
-[username@arc test]$ module load python/anaconda3-2018.12
-[username@arc test]$ python lorenz.py
-```
+  - There is no memory allocation
+
+  - There is no time specification
+
+  - It is meant for short sessions (no longer than 15 min) requiring few memory 
+
+
+  ```
+  ssh username@arc.ucalgary.ca
+  [username@arc ~]$ cd data
+  [username@arc data]$ cd test
+  [username@arc test]$ module load python/anaconda3-2018.12
+  [username@arc test]$ python lorenz.py
+  ```
 
 
 
