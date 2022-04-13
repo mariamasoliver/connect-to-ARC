@@ -1,0 +1,41 @@
+squeue
+	Gets info about the queues. -u <username> -p <partition>
+
+sinfo
+	Gives info about open partitions
+
+	Add:
+		alias ssinfo='sinfo -o "%.10P %.5a %.10l %.16A  %N"'
+	to .bashrc for a nicer output with ssinfo
+
+module
+	Loads software to you session or in a batch job.
+		avail: List all avaliable peices of software
+		load: Used to load a peice of software
+		list : Lists all loaded software
+
+sbatch	<job script>
+	Queues a job script. --array=[0-10|1,3,4] for creating a job array.
+
+sstat <jobid>
+	Gets info about a running job, similar --format labels as sacct
+
+sacct
+	Gets info about all your jobs from slurm accounting log. You can pass in parameters
+	such as --starttime <date> to get all jobs that have run or are running since <date>
+	or --format <labels> to format the output with the <labels> info columns. Useful
+	labels:
+		- state: State of a job
+		- time: The allocated time limit
+		- start: Start date and time
+		- end: End date and time (will be unknown if still running)
+		- elapsed: Time the job has been running or ran
+		- MaxRSS: Max residual set size. ~ Max much memory your job used
+		- AveRSS: Average residual set size
+
+seff <jobid>
+	Get info about a job
+
+To track your pending and running jobs:
+	watch -n5 'squeue -u <username> -h -t pending,running -r -O "state" | uniq -c'
+Refreshes every 5 seconds (can change with -n) and <username> is your username.
