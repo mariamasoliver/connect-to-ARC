@@ -11,18 +11,20 @@ Instructions to install the VPN: https://ucalgary.service-now.com/kb_view.do?sys
 
 ## How we interact with the Cluster
 We will interact with the ARC cluster through the terminal. The language we will be using is bash. 
-### Initial remark
-When you open a terminal, the directory you are in, is usually the home directory. 
+
+When you open a terminal, the directory you are in, it is usually the home directory. 
+The home directory address can be shortened as `~`.
 You can type `pwd` to know exactly where you are and the address to your home directory. 
 
-Some other useful Bash Commands:
-- `ls` It allows you to know which files are located in the directory you are in.
-- `cd` It allows you to move around the different directories in your computer. 
-  - syntax: `cd directory`
-- `cd ..` It allows you to go to the directory immediately above to the current one
-- `less` It allows you to visualize a file directly in the terminal
-  - syntax: `less filename.py`
- 
+Some useful Bash Commands:
+- `pwd` It prints the address of the directory you are in.
+- `ls`  It allows you to know which files are located in the directory you are in.
+- `cd`  It allows you to move around the different directories in your computer. 
+  - **syntax** `cd directory`
+- `cd ..` It allows you to go to the directory immediately above to the current one.
+- `less` It allows you to visualize a file directly in the terminal.
+  - **syntax** `less filename.py`
+
 ## How to log in
 ### For Linux/macOS users open the terminal and type
 ```
@@ -277,7 +279,45 @@ You can submit a job that is dependant upon another job you have already submitt
 [username@arc test]$ sbatch --dependency=afterok:<dependantID> script.slurm
 ```
 where this new job will run once the job with ID \<dependantID\> has succesfully completed. 
-  
+
+
+## Transfer files 
+### Windows
+MobaXTERm it has a graphical transfer interface
+### MacOS and Linux
+
+#### Through the Terminal
+- Transfer files to the cluster
+     ```
+     $ scp -r localfile username@arc.ucalgary.ca:data/
+     ```
+- Transfer files from the cluster
+     ```
+     $ scp -r username@arc.ucalgary.ca:data/localfile
+     ```
+#### Using SSHFS
+
+SSHFS is a command-line tool for safely mounting a remote folder from a server (in this case the ARC cluster) to a local machine. In another words, it allows you to treat your cluster as local storage. I would recomend using this method if you have administrative powers to your local machine. 
+
+1. Install it. Type the following command on the terminal:
+```
+sudo apt-get install sshfs
+```
+2. Create a local directory (folder) in which to mount the cluster. You can name it ARC.
+3. Using the terminal, go to that directory and print the address using `pwd`. 
+Let's say you have mounted it on your home directory and named it ARC, the address will be:
+```
+~/ARC/
+```
+4. On the terminal, connect that directory to the cluster by using
+```
+sshfs username@arc.ucalgary.ca:/home/username/data ~/ARC/
+```
+or if you have mounted it in another address with another name
+```
+sshfs username@arc.ucalgary.ca:/home/username/data addresstothefolder/foldername
+```
+
 ### Further Help  
-For more infomation the slurm docs (https://slurm.schedmd.com/documentation.html) can be quite useful, especially the man pages (https://slurm.schedmd.com/man_index.html).
+For more infomation the slurm docs (https://slurm.schedmd.com/documentation.html) can be quite useful, especially the man pages (https://slurm.schedmd.com/man_index.html). For more information on SSHFS: https://phoenixnap.com/kb/sshfs. 
 
