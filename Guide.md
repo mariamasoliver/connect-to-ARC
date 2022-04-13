@@ -83,7 +83,7 @@ There are two main directories
 - Each partition has its own characteristics. 
 - You need to choose one partition to run your code (Exception: when you use your home directory to test your code, as we will see below)
 - Each partition has different number of nodes. 
-- In order to know current state of each partition you can type **arc.info** in the terminal and the follow table will appear
+- In order to know current state of each partition you can type **arc.nodes** in the terminal and the follow table will appear
 
  ```
  [username@arc ~]$ arc.info
