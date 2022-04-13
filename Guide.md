@@ -204,6 +204,10 @@ It is always good to remove a module if you are no longer plan to use it, in ord
 ```
 module remove python/anaconda3-2018.12
 ```
+**IMPORTANT**
+
+Do not include the library matplotlib.pyplot, it does not work on ARC. I would recomend to do all your plots on your local machine.                       
+
 ### Using a script
 Once you know your code works, it is convinient to send it using a script. 
 - In this script you specify the partition you will use, the memory and the time it will need to run. 
@@ -216,9 +220,6 @@ For this specific script, you should create before running it, three folders:
 - **Results** folder where your results will be saved.
 - **Out** folder where a file will be saved stating if there were some errors in your code.
 - **Report** folder where **two** files will be saved. One ending with .out: where general information such as the time your code started to run, in which node run or at which time ended is saved. The other one ending with .err stating if there was some issue with the script of your code. Let's say you forgot to change the folder name where your results want to be saved and it does not exists. 
-
-**IMPORTANT**
-Do not include the library matplotlib.pyplot, it does not work on ARC. I would recomend to do all your plots on your local machine.                       
 
 #### How to run the script
 From your Home directory
