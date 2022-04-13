@@ -9,7 +9,7 @@
 #SBATCH --partition=cpu2019
 
 # Email settings 
-#SBATCH --mail-user=maria.masolivervila@ucalgary.ca
+#SBATCH --mail-user=username@ucalgary.ca
 #SBATCH --mail-type=ALL
 
 # Set where you want the standard our and standard error to go
