@@ -178,6 +178,5 @@ Once you know your code works, it is convinient to send it using a script.
 - In this script you specify the partition you will use, the memory and the time it will need to run. 
 - You can send it for one set of parameters or for several set of parameters.
 - Your script needs to end with the termination **.slurm**
-- You have an example on the main branch: https://github.com/mariamasoliver/connect_to_ARC/blob/5db659f8ad336c340c22aa22c7b6d02ab318cd3e/script.slurm
--
+- You have an example on the main branch: 
 
