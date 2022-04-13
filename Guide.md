@@ -178,5 +178,29 @@ Once you know your code works, it is convinient to send it using a script.
 - In this script you specify the partition you will use, the memory and the time it will need to run. 
 - You can send it for one set of parameters or for several set of parameters.
 - Your script needs to end with the termination **.slurm**
-- You have an example on the main branch: 
+- Example: https://github.com/mariamasoliver/connect_to_ARC/blob/main/script.slurm
 
+#### How to run the script
+From your Home directory
+ ```
+  ssh username@arc.ucalgary.ca
+  [username@arc ~]$ cd data
+```
+You cd to the folder containing your script and your code. Both have to be saved on the same folder.
+```
+  [username@arc data]$ cd test
+
+```
+
+If you already specified the input in the script, or its input independent run it like
+```
+  [username@arc test]$ sbatch script.slurm
+
+```
+If its input dependent
+```
+  [username@arc test]$ sbatch --array=1,2,3,....,N script.slurm
+
+```
+
+where 1,2,3...,N are the set of your parameters.
