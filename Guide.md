@@ -180,6 +180,13 @@ Once you know your code works, it is convinient to send it using a script.
 - Your script needs to end with the termination **.slurm**
 - Example: https://github.com/mariamasoliver/connect_to_ARC/blob/main/script.slurm
 
+### Before running the script
+For this specific script, you should create before running it, three folders:
+- Results
+- Out
+- Report
+
+
 #### How to run the script
 From your Home directory
  ```
@@ -203,4 +210,10 @@ If its input dependent
 
 ```
 
-where 1,2,3...,N are the set of your parameters. They have to be **integers**. So adapt your code accordingly. 
+where 1,2,3...,N are the set of your parameters. They have to be **integers**. You should adapt your code accordingly. 
+
+Tomorrow add:
+You can check the state of your programs runnings like this
+
+You can check - while the program running- some memory information
+
