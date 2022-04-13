@@ -203,4 +203,4 @@ If its input dependent
 
 ```
 
-where 1,2,3...,N are the set of your parameters.
+where 1,2,3...,N are the set of your parameters. They have to be **integers**. So adapt your code accordingly. 
