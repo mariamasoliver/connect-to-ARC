@@ -5,13 +5,12 @@ Created on Mon Apr 11 18:20:24 2022
 
 @author: maria
 
-It integrates the Lorenz system and plots its time series
+It integrates the Lorenz system
 for a given input value beta
 """
 
     
 import numpy as np 
-import matplotlib.pyplot as plt
 import sys
 from scipy.integrate import ode
 
@@ -52,25 +51,6 @@ y.set_initial_value(y0, t0).set_f_params(arg)
 sup = np.zeros((m, nt))
 for i in range (nt):
     sup[:, i] = y.integrate(y.t+dt)
-    
-
-
-#from mpl_toolkits import mplot3d
-"""
-Plot
-
-"""
-fig = plt.figure(figsize = (10,5))
-ax = fig.add_subplot(1, 1,1, projection='3d')  
-ax.plot3D(sup[0,1000:12000], sup[1,1000:12000], sup[2,1000:12000])
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_zlabel('z')    
-
-figure_nom = 'lorenz_beta_'+str(beta)+'.png'
-plt.tight_layout()
-plt.savefig(figure_nom, dpi=400)
-    
 
 """
 Saving text
