@@ -318,6 +318,13 @@ or if you have mounted it in another address with another name
 sshfs username@arc.ucalgary.ca:/home/username/data addresstothefolder/foldername
 ```
 
+5. When you are done with file transfer, unmount it:
+```
+diskutil unmount addresstothefolder/foldername
+```
+
+
+
 ### Further Help  
 For more infomation the slurm docs (https://slurm.schedmd.com/documentation.html) can be quite useful, especially the man pages (https://slurm.schedmd.com/man_index.html). For more information on SSHFS: https://phoenixnap.com/kb/sshfs. 
 
