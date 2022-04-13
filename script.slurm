@@ -22,7 +22,8 @@ MAIN="lorenz_using_script"
 # Define key parameters for the example calculation.
 # $SLURM_ARRAY_TASK_ID is the variable containing the value or values passed in by sbatch --array=
 
-S0=$SLURM_ARRAY_TASK_ID
+S0=$SLURM_ARRAY_TASK_ID #If you specify the inputs directly on the terminal
+# S0=1.8 #if you specify it on the script
 # Name of results file or directory
 RESULTS_FILE=./Results
 
