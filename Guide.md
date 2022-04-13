@@ -168,7 +168,15 @@ Use it for programm testing
   [username@arc test]$ module load python/anaconda3-2018.12
   [username@arc test]$ python lorenz.py
   ```
-It is always good to remove a module if you are no longer plan to use it, in order to avoid issues with the different languages (bash, python). 
+You can also use 
+```
+[username@arc test]$ module avail
+```
+to check what software is avaliable on the cluster and 
+```
+[username@arc test]$ module list
+```
+to check what modules have already been loaded. It is always good to remove a module if you are no longer plan to use it, in order to avoid issues with the different languages (bash, python). 
 
 ```
 module remove python/anaconda3-2018.12
@@ -210,7 +218,39 @@ If its input dependent
 
 ```
 
-where 1,2,3...,N are the set of your parameters. They have to be **integers**. You should adapt your code accordingly. 
+where 1,2,3...,N are the set of your parameters. They have to be **integers**. You should adapt your code accordingly. When a job is submitted you will get a job ID.
+### Job Status and Efficiency
+The job ID can be used to check on the status of a job with
+```
+[username@arc test]$ sstat -j <jobid>
+```
+you can refine the information displayed using the --format option, for example
+```
+[username@arc test]$ sstat --format=AveCPU,AveVMSize -j <jobid>
+```
+which will give the average cpu time and average virtual memory size of tasks in the job. You can also use the job ID to get information about the efficicny and status of a job that has finished running with
+```
+[username@arc test]$ seff <jobid>
+```
+You can also get a summary (with their IDs listed) of all your jobs using
+```
+[username@arc test]$ sacct --starttime <data> --format=<labels>
+```
+where --starttime is an option that lets you get all jobs that have run or are running since \<date\> and --format lets you control what information is displayed, for example
+```
+[username@arc test]$ sacct --format=jobid,elapsed,ncpus,state
+```
+will display the job ID, time elapsed for job, number of cpus used by job, and the state of the job.
+  
+### Job Dependencies
+You can submit a job that is dependant upon another job you have already submitted using
+```
+[username@arc test]$ sbatch --dependency=afterok:<dependantID> script.slurm
+```
+where this new job will run once the job with ID \<dependantID\> has succesfully completed. 
+  
+### Further Help  
+For more infomation the slurm docs (https://slurm.schedmd.com/documentation.html) can be quite useful, especially the man pages (https://slurm.schedmd.com/man_index.html).
 
 Tomorrow add:
 You can check the state of your programs runnings like this
