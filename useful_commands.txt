@@ -32,6 +32,7 @@ sacct
 		- elapsed: Time the job has been running or ran
 		- MaxRSS: Max residual set size. ~ Max much memory your job used
 		- AveRSS: Average residual set size
+	The options --brief and --allocations can also be useful.
 
 seff <jobid>
 	Get info about a job
