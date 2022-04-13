@@ -1,9 +1,28 @@
 # Guide to connect to the ARC cluster
 ARC stands for Advanced Research Computing. Here we will cover how to log in, run jobs and export files. If you want further information visit https://rcs.ucalgary.ca/ARC_Cluster_Guide.
 
-Note: You need to be at the University of Calgary or you should use their VPN if you are off-campus whenever you want to use ARC. 
-Instructions to install the VPN: https://ucalgary.service-now.com/kb_view.do?sysparm_article=KB0030079
+Notes
+- You first need an ARC account: write to support@hpc.ucalgary.ca and mention the intended research and software you plan to use. You must have a University of Calgary IT account in order to use ARC. In case you don't:
+    -   You can register for one at https://itregport.ucalgary.ca/.
+    -   For users external to the University, such as for users collaborating on a research project at the University of Calgary, please contact support@hpc.ucalgary.ca and mention the project leader you are collaborating with.
+    
+- You need to be at the University of Calgary or you should use their VPN if you are off-campus whenever you want to use ARC. 
+Instructions to install the VPN: https://ucalgary.service-now.com/kb_view.do?sysparm_article=KB0030079.
 
+## How we interact with the Cluster
+We will interact with the ARC cluster through the terminal. The language we will be using is bash. 
+### Initial remark
+When you open a terminal, the directory you are in, is usually the home directory. 
+You can type `pwd` to know exactly where you are and the address to your home directory. 
+
+Some other useful Bash Commands:
+- `ls` It allows you to know which files are located in the directory you are in.
+- `cd` It allows you to move around the different directories in your computer. 
+  - syntax: `cd directory`
+- `cd ..` It allows you to go to the directory immediately above to the current one
+- `less` It allows you to visualize a file directly in the terminal
+  - syntax: `less filename.py`
+ 
 ## How to log in
 ### For Linux/macOS users open the terminal and type
 ```
@@ -176,7 +195,9 @@ to check what software is avaliable on the cluster and
 ```
 [username@arc test]$ module list
 ```
-to check what modules have already been loaded. It is always good to remove a module if you are no longer plan to use it, in order to avoid issues with the different languages (bash, python). 
+to check what modules have already been loaded. 
+
+It is always good to remove a module if you are no longer plan to use it, in order to avoid issues with the different languages (bash, python). 
 
 ```
 module remove python/anaconda3-2018.12
