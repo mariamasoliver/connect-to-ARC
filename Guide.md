@@ -213,9 +213,9 @@ Once you know your code works, it is convinient to send it using a script.
 
 ### Before running the script
 For this specific script, you should create before running it, three folders:
-- Results
-- Out
-- Report
+- **Results** folder where your results will be saved.
+- **Out** folder where a file will be saved stating if there were some errors in your code.
+- **Report** folder where **two** files will be saved. One ending with .out: where general information such as the time your code started to run, in which node run or at which time ended is saved. The other one ending with .err stating if there was some issue with the script of your code. Let's say you forgot to change the folder name where your results want to be saved and it does not exists. 
 
 
 #### How to run the script
