@@ -26,7 +26,8 @@ Some useful Bash Commands:
   - **syntax** `less filename.py`
 
 ## How to log in
-### For Linux/macOS users open the terminal and type
+The id and the password will be the ones of UofC account
+.### For Linux/macOS users open the terminal and type
 ```
 ssh username@arc.ucalgary.ca
 ```
