@@ -16,7 +16,7 @@
 #SBATCH --output=./Report/M-%x.%j.out
 #SBATCH --error=./Report/M-%x.%j.err
 
-# Name of the matlab function to be called
+# Name of the python function to be called
 MAIN="lorenz_using_script"
 
 # Define key parameters for the example calculation.
