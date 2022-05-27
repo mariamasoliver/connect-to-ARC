@@ -296,9 +296,9 @@ MobaXTERm it has a graphical transfer interface
      ```
      $ scp -r localfile username@arc.ucalgary.ca:data/
      ```
-- Transfer files from the cluster
+- Transfer files from the cluster to your local machine 
      ```
-     $ scp -r username@arc.ucalgary.ca:data/localfile
+     $ scp -r username@arc.ucalgary.ca:data/localfile .
      ```
 #### Using SSHFS
 
